@@ -443,3 +443,12 @@ footer .footer-below {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+.modal-backdrop{
+    z-index: 0 !important;
+}
+h6{
+    color: #ffffff !important;
+}
+.menu_links{
+    color: #ffffff !important;
+}

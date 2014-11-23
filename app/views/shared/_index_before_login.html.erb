@@ -1,0 +1,207 @@
+<!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                <%= image_tag("profile.png", :class => "img-responsive")%>
+                    <div class="intro-text">
+                        <span class="name">Start Paying Your Rent Online</span>
+                        <hr class="star-light">
+                        <span class="skills">Hassel free Secured Rent Payments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- home Grid Section -->
+    <section id="home">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <h2>Home</h2>
+                  <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+               <p>add content for home</p> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Manager Section -->
+    <section id="manager">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <h2>Manager</h2>
+                  <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+            <p>Add content for manager</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resident Section -->
+    <section id="resident">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <h2>Resident</h2>
+                  <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+            <p>Add content for resident</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Download Theme
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Contact Section -->
+    <section id="contact">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <h2>Contact</h2>
+                  <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+            <p>Add form for contact</p>
+            </div>
+        </div>
+    </section>
+
+
+<!-- login Modal -->
+    <div class="portfolio-modal modal" id="login_modal" tabindex="1" role="dialog" >
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                           <h2>Rent Payer</h2>
+                            <hr class="star-primary">
+                            <div id="login_modal_body"></div>
+                            <br />
+                            <br />
+                            <a type="button" class="" data-dismiss="modal"><i class="fa fa-times"></i> Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- sign_up Modal -->
+    <div class="portfolio-modal modal" id="sign_up_modal" tabindex="1" role="dialog" >
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                           <h2>Rent Payer</h2>
+                            <hr class="star-primary">
+                            <a href="#manager_sign_up_modal" id="manager_sign_up_modal_btn" class="btn btn-default" data-toggle="modal" data-dismiss="modal">Manager Sign-up</a>
+                            <a href="users/sign_up" class="btn btn-default">Resident Sign-up</a>
+                            <br />
+                            <br />
+                            <a type="button" class="" data-dismiss="modal"><i class="fa fa-times"></i> Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- manager_sign_up Modal -->
+    <div class="portfolio-modal modal" id="manager_sign_up_modal" tabindex="1" role="dialog" >
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body" >
+                        <div class="manager_sign_up_modal_body"></div>
+                            <br />
+                            <br />
+                            <a type="button" class="" data-dismiss="modal"><i class="fa fa-times"></i> Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).on('click','#manager_sign_up_modal_btn',function(){
+        if ($('.manager_sign_up_modal_body').is(':empty')){
+            $.ajax({
+              url: "/users/sign_up",
+            })
+              .done(function( html ) {
+                $( ".manager_sign_up_modal_body" ).append( html );
+              });
+          }
+        });
+    $(document).on('click','#login_modal_btn',function(){
+        if ($('#login_modal_body').is(':empty')){
+            $.ajax({
+              url: "/users/sign_in",
+            })
+              .done(function( html ) {
+                $( "#login_modal_body" ).append( html );
+              });
+            }
+        });
+    </script>
