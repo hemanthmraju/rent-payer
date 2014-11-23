@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'therubyracer'
 gem 'devise'
+
+gem 'rails_12factor', group: :production
