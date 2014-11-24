@@ -16,35 +16,71 @@
                
                 </div>
                 <div class="col-lg-3">
-                <a href="#" class="menu_links">My Account</a>
-               
+                <a href="#" class="menu_links" id="my_account_btn">My Account</a>
                 </div>
             </div>
         </div>
 </header>
 
 
- <section id="homess">
+ <section id="my_account" class="top_padding_50" style="display:none">
     
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-2 text-center">
+                <div class="row">
+                  <%= link_to "Edit Account", edit_user_registration_path , remote: true, :id=> "my_acc_inner_btn"%>
+                </div>
+                 <div class="row">
+                  <%= link_to "My Payments", edit_user_registration_path , remote: true, :id=> "my_acc_inner_btn"%>
+                </div>
+
+                </div>
+                <div class="col-lg-10 text-center" id="my_acc_secodary_section">
                 <p><%= current_user.email %></p>
                 </div>
             </div>
         </div>
 </section>
 
+<section id="landing" class="top_padding_50" >
+    <div class="container">
 
-<section>
-	<div class="container">
-        
-
-
+        <div class="row">
+            <div class="col-lg-3 ">
+             <h6 class="landing_h6 ">Renter Information</h6>
+             <hr>
+             <a href="#"  class="btn btn-default" data-toggle="modal" data-dismiss="modal">Add Renter</a>
+            </div>
+            <div class="col-lg-3 ">
+              <h6 class="landing_h6 ">Payment Method</h6>
+               <hr>
+              <a href="#"  class="btn btn-default" data-toggle="modal" data-dismiss="modal">Add Payment Method</a>	
+            </div>
+            <div class="col-lg-6 ">
+              <h6 class="landing_h6 ">Payment Summary</h6>
+               <hr>
+                <% if flash[:notice] %>
+                  <div class="notice"><%= flash[:notice] %></div>
+                <% end %>
+              <%= render :partial => 'payments/form' %>
+            </div>
+        </div>
     </div>
 </section>
 <script type="text/javascript">
 	$(document).on('click','#main_menu_btn',function(){
 		$('#menu').toggle("slow");
+		$('#my_account').hide("slow");
+
+		
 	});
+	$(document).on('click','#my_account_btn',function(){
+		$('#menu').toggle("slow");
+		$('#my_account').toggle("slow");
+	});
+	
+  $(document).on('ajax:success','#my_acc_inner_btn',function( a,html ){
+    $("#my_acc_secodary_section").html( html );
+  });
 </script>

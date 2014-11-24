@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rent: 9.99
+  parking: 9.99
+  late_fee: 9.99
+  other: 9.99
+  application_fee: 9.99
+  deposit: 9.99
+  move_in_other: 9.99
+  promo_code: MyString
+  total: 9.99
+  discounts: 9.99
+
+two:
+  rent: 9.99
+  parking: 9.99
+  late_fee: 9.99
+  other: 9.99
+  application_fee: 9.99
+  deposit: 9.99
+  move_in_other: 9.99
+  promo_code: MyString
+  total: 9.99
+  discounts: 9.99
